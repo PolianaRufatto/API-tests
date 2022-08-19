@@ -40,5 +40,16 @@ describe('Users', () => {
     return request.post('users').set('Authorization', `Bearer ${TOKEN}`).send(data).then((res) => {
       expect(res.body).to.deep.include(data);
     });
-  })
+  });
+
+  it('PUT /users/id', () => {
+    const data = {
+      status: 'active',
+      name: `Test - ${Math.floor(Math.random() * 9999)}`,
+    };
+
+    return request.put('users/5496').set('Authorization', `Bearer ${TOKEN}`).send(data).then((res) => {
+        expect(res.body).to.deep.include(data);
+      });
+  });
 })
