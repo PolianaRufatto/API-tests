@@ -28,4 +28,17 @@ describe('Users', () => {
       });
     });
   });
+
+  it('POST /users', () => {
+    const data = {
+      email: `testtt-${Math.floor(Math.random() * 9999)}@mail.com`,
+      name: 'Test name',
+      gender: 'female',
+      status: 'inactive',
+    };
+
+    return request.post('users').set('Authorization', `Bearer ${TOKEN}`).send(data).then((res) => {
+      expect(res.body).to.deep.include(data);
+    });
+  })
 })
