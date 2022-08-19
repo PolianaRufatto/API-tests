@@ -1,0 +1,20 @@
+{
+  "editor.tabSize": 2,
+  "files.encoding": "utf8",
+  "files.associations": {
+    "*.md": "mdx"
+  },
+  "prettier.tabWidth": 2,
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": false
+  },
+  "cucumberautocomplete.steps": ["cypress/support/steps/**.steps.js"]
+}
